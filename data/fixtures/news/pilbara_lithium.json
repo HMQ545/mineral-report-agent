@@ -1,0 +1,31 @@
+{
+  "source": "repository fixture (offline sample)",
+  "source_url": "fixture://news/pilbara_lithium",
+  "as_of": "2026-10-14",
+  "limit": 10,
+  "disclaimer": "本文件是仓库内置的离线样例新闻，全部条目均为人工编写的演示内容，不是真实新闻报道。当且仅当所有实时 RSS 数据源都失败时才会返回，并在报告中明确标注 provenance=fixture。",
+  "items": [
+    {
+      "title": "[SAMPLE] Pilbara Minerals reports quarterly spodumene concentrate output",
+      "url": "https://example.invalid/sample/pilbara-quarterly",
+      "source": "offline-fixture",
+      "published_at": "2026-10-14T02:00:00+00:00",
+      "snippet": "SAMPLE CONTENT - not a real article. Used only to exercise the offline pipeline."
+    },
+    {
+      "title": "[SAMPLE] Lithium carbonate futures steady as downstream demand recovers",
+      "url": "https://example.invalid/sample/lithium-carbonate",
+      "source": "offline-fixture",
+      "published_at": "2026-10-13T09:30:00+00:00",
+      "snippet": "SAMPLE CONTENT - not a real article. Used only to exercise the offline pipeline."
+    },
+    {
+      "title": "[SAMPLE] Analysts flag concentrate price risk for hard-rock lithium producers",
+      "url": "https://example.invalid/sample/concentrate-risk",
+      "source": "offline-fixture",
+      "published_at": "2026-10-12T11:15:00+00:00",
+      "snippet": "SAMPLE CONTENT - not a real article. Used only to exercise the offline pipeline."
+    }
+  ]
+}
+

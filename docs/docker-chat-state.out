@@ -1,0 +1,6 @@
+[会话] user_id=00ee1d14-1ca6-42ec-bb07-b186b77fc4cf session_id=64fd17a7-4c0f-4a24-b669-29d49db4c923 persist=sqlite
+session_id : 64fd17a7-4c0f-4a24-b669-29d49db4c923
+user_id    : 00ee1d14-1ca6-42ec-bb07-b186b77fc4cf
+tasks      : 1
+  - task_id=76e917d4-aef6-4470-a829-39c33186990c intent=trend_query status=completed suspended=False missing=无
+      slots={"commodity": "lithium_carbonate", "days": 30, "query": "最近30天的走势"}

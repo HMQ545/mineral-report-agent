@@ -1,0 +1,243 @@
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [mining-news-mcp internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.04kB 0.0s done
+#1 DONE 0.0s
+
+#2 [mineral-pdf-mcp internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.04kB 0.0s done
+#2 DONE 0.0s
+
+#3 [lme-price-mcp internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.04kB done
+#3 DONE 0.0s
+
+#4 [mining-news-mcp internal] load .dockerignore
+#4 transferring context: 134B done
+#4 DONE 0.0s
+
+#5 [mineral-pdf-mcp internal] load metadata for docker.io/library/python:3.12-slim
+#5 DONE 0.0s
+
+#6 [lme-price-mcp internal] load .dockerignore
+#6 transferring context: 134B done
+#6 DONE 0.0s
+
+#7 [mineral-pdf-mcp internal] load .dockerignore
+#7 transferring context: 134B done
+#7 DONE 0.0s
+
+#8 [mineral-pdf-mcp 1/9] FROM docker.io/library/python:3.12-slim
+#8 DONE 0.0s
+
+#9 [lme-price-mcp internal] load build context
+#9 transferring context: 1.48MB 0.2s done
+#9 DONE 0.2s
+
+#10 [mineral-pdf-mcp internal] load build context
+#10 transferring context: 1.48MB 0.2s done
+#10 DONE 0.2s
+
+#11 [mining-news-mcp internal] load build context
+#11 transferring context: 1.48MB 0.2s done
+#11 DONE 0.2s
+
+#12 [mineral-pdf-mcp 2/9] RUN pip install --no-cache-dir uv==0.11.25
+#12 CACHED
+
+#13 [mineral-pdf-mcp 3/9] WORKDIR /app
+#13 CACHED
+
+#14 [mineral-pdf-mcp 4/9] COPY pyproject.toml uv.lock README.md ./
+#14 CACHED
+
+#15 [lme-price-mcp 5/9] COPY src ./src
+#15 DONE 0.2s
+
+#16 [mining-news-mcp 6/9] COPY data ./data
+#16 DONE 0.1s
+
+#17 [lme-price-mcp 7/9] COPY scripts ./scripts
+#17 DONE 0.1s
+
+#18 [mineral-pdf-mcp 8/9] RUN uv sync --frozen --no-dev
+#18 0.892 Using CPython 3.12.15 interpreter at: /usr/local/bin/python3
+#18 0.893 Creating virtual environment at: .venv
+#18 0.979    Building minereport @ file:///app
+#18 2.329 Downloading pdfminer-six (6.3MiB)
+#18 2.331 Downloading pillow (6.6MiB)
+#18 2.332 Downloading tiktoken (1.1MiB)
+#18 2.333 Downloading pydantic-core (1.9MiB)
+#18 2.348 Downloading zstandard (5.3MiB)
+#18 2.357 Downloading cryptography (4.5MiB)
+#18 2.362 Downloading pypdfium2 (3.6MiB)
+#18 2.392 Downloading lxml (4.8MiB)
+#18 5.914  Downloaded tiktoken
+#18 6.718  Downloaded pydantic-core
+#18 8.964  Downloaded pypdfium2
+#18 9.872  Downloaded cryptography
+#18 9.972  Downloaded lxml
+#18 10.30       Built minereport @ file:///app
+#18 10.47  Downloaded zstandard
+#18 10.54  Downloaded pdfminer-six
+#18 10.70  Downloaded pillow
+#18 10.70 Prepared 73 packages in 9.76s
+#18 10.81 Installed 73 packages in 107ms
+#18 10.81  + aiosqlite==0.22.1
+#18 10.81  + annotated-types==0.8.0
+#18 10.81  + anyio==4.9.0
+#18 10.81  + attrs==26.1.0
+#18 10.81  + certifi==2026.7.22
+#18 10.81  + cffi==2.1.1
+#18 10.81  + charset-normalizer==3.5.2
+#18 10.81  + click==8.5.0
+#18 10.81  + cryptography==50.0.2
+#18 10.81  + distro==1.9.0
+#18 10.81  + h11==0.16.0
+#18 10.81  + httpcore==1.0.9
+#18 10.81  + httpcore2==2.6.0
+#18 10.81  + httpx==0.28.1
+#18 10.81  + httpx-sse==0.4.3
+#18 10.81  + httpx2==2.6.0
+#18 10.81  + idna==3.20
+#18 10.81  + jinja2==3.1.6
+#18 10.81  + jiter==0.17.0
+#18 10.81  + jsonpatch==1.35
+#18 10.81  + jsonpointer==3.2.1
+#18 10.81  + jsonschema==4.26.0
+#18 10.81  + jsonschema-specifications==2025.9.1
+#18 10.81  + langchain-core==0.3.72
+#18 10.81  + langchain-deepseek==0.1.4
+#18 10.81  + langchain-mcp-adapters==0.1.11
+#18 10.81  + langchain-openai==0.3.28
+#18 10.81  + langgraph==0.6.11
+#18 10.81  + langgraph-checkpoint==3.0.1
+#18 10.81  + langgraph-checkpoint-sqlite==3.0.3
+#18 10.81  + langgraph-prebuilt==0.6.5
+#18 10.81  + langgraph-sdk==0.2.15
+#18 10.81  + langsmith==0.14.8
+#18 10.81  + lxml==5.3.1
+#18 10.81  + markupsafe==3.0.4
+#18 10.81  + mcp==1.18.0
+#18 10.81  + minereport==0.1.0 (from file:///app)
+#18 10.81  + openai==1.109.1
+#18 10.81  + orjson==3.13.0
+#18 10.81  + ormsgpack==1.12.2
+#18 10.81  + packaging==26.3
+#18 10.81  + pdfminer-six==20260107
+#18 10.81  + pdfplumber==0.11.10
+#18 10.81  + pillow==12.3.0
+#18 10.81  + pycparser==3.11
+#18 10.81  + pydantic==2.11.7
+#18 10.81  + pydantic-core==2.33.2
+#18 10.81  + pydantic-settings==2.15.0
+#18 10.81  + pypdfium2==5.14.0
+#18 10.81  + python-dotenv==1.0.1
+#18 10.81  + python-multipart==0.0.32
+#18 10.81  + pyyaml==6.0.3
+#18 10.81  + referencing==0.37.0
+#18 10.81  + regex==2026.9.29
+#18 10.81  + requests==2.34.2
+#18 10.81  + requests-toolbelt==1.0.0
+#18 10.81  + rpds-py==2026.9.1
+#18 10.81  + sniffio==1.3.1
+#18 10.81  + sqlite-vec==0.1.9
+#18 10.81  + sse-starlette==3.5.0
+#18 10.81  + starlette==1.8.0
+#18 10.81  + tenacity==8.5.0
+#18 10.81  + tiktoken==0.14.0
+#18 10.81  + tqdm==4.70.1
+#18 10.81  + truststore==0.10.5
+#18 10.81  + typing-extensions==4.16.0
+#18 10.82  + typing-inspection==0.4.4
+#18 10.82  + urllib3==2.8.0
+#18 10.82  + uuid-utils==0.17.1
+#18 10.82  + uvicorn==0.54.0
+#18 10.82  + websockets==17.2
+#18 10.82  + xxhash==4.0.1
+#18 10.82  + zstandard==0.25.0
+#18 DONE 11.1s
+
+#19 [mineral-pdf-mcp 9/9] RUN useradd --create-home --shell /bin/bash appuser  && mkdir -p /app/reports  && chown -R appuser:appuser /app
+#19 DONE 8.5s
+
+#20 [mining-news-mcp] exporting to image
+#20 exporting layers
+#20 exporting layers 1.2s done
+#20 writing image sha256:7420dad8218bdc934ea0224d6e3a81e5b8025ce68835c398bad6a0b143785390 0.0s done
+#20 naming to docker.io/library/minereport:local 0.0s done
+#20 DONE 1.2s
+
+#21 [mineral-pdf-mcp] exporting to image
+#21 exporting layers 1.2s done
+#21 writing image sha256:be7820d68e64201507de82ae1319941ce576ec2f8a4605bf71bd9898aad84873 0.0s done
+#21 naming to docker.io/library/minereport:local done
+#21 DONE 1.2s
+
+#22 [lme-price-mcp] exporting to image
+#22 exporting layers 1.2s done
+#22 writing image sha256:98023109ba6ea0f627bd714288e234fb2d4ecd432a0909e5c3c5e76aec863346 0.0s done
+#22 naming to docker.io/library/minereport:local 0.0s done
+#22 DONE 1.2s
+
+#23 [mining-news-mcp] resolving provenance for metadata file
+#23 DONE 0.0s
+
+#24 [lme-price-mcp] resolving provenance for metadata file
+#24 DONE 0.0s
+
+#25 [mineral-pdf-mcp] resolving provenance for metadata file
+#25 DONE 0.0s
+
+#26 [agent internal] load build definition from Dockerfile
+#26 transferring dockerfile: 1.04kB done
+#26 DONE 0.0s
+
+#5 [agent internal] load metadata for docker.io/library/python:3.12-slim
+#5 DONE 0.0s
+
+#27 [agent internal] load .dockerignore
+#27 transferring context: 134B done
+#27 DONE 0.0s
+
+#8 [agent 1/9] FROM docker.io/library/python:3.12-slim
+#8 DONE 0.0s
+
+#28 [agent internal] load build context
+#28 transferring context: 9.61kB 0.0s done
+#28 DONE 0.0s
+
+#29 [agent 7/9] COPY scripts ./scripts
+#29 CACHED
+
+#30 [agent 6/9] COPY data ./data
+#30 CACHED
+
+#13 [agent 3/9] WORKDIR /app
+#13 CACHED
+
+#12 [agent 2/9] RUN pip install --no-cache-dir uv==0.11.25
+#12 CACHED
+
+#31 [agent 8/9] RUN uv sync --frozen --no-dev
+#31 CACHED
+
+#32 [agent 5/9] COPY src ./src
+#32 CACHED
+
+#33 [agent 4/9] COPY pyproject.toml uv.lock README.md ./
+#33 CACHED
+
+#34 [agent 9/9] RUN useradd --create-home --shell /bin/bash appuser  && mkdir -p /app/reports  && chown -R appuser:appuser /app
+#34 CACHED
+
+#35 [agent] exporting to image
+#35 exporting layers done
+#35 writing image sha256:73e23ab2f544d7ac7078117d1342c0b023cc198d99df610667229ceefcf8bd52 done
+#35 naming to docker.io/library/minereport:local done
+#35 DONE 0.0s
+
+#36 [agent] resolving provenance for metadata file
+#36 DONE 0.0s

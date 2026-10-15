@@ -1,0 +1,16 @@
+[会话] user_id=00ee1d14-1ca6-42ec-bb07-b186b77fc4cf session_id=d8132c52-933c-4033-a104-126f7c4f7428 persist=sqlite
+命令：
+  /state   查看当前会话的意图、槽位与任务状态
+  /tasks   列出该会话的全部任务
+  /cancel  取消所有未完成任务
+  /exit    退出（会话与任务已持久化，可用同一 session_id 恢复）
+  /help    显示本帮助
+直接输入自然语言即可继续对话。
+你> Agent> 你想查碳酸锂还是锂辉石精矿？
+你> Agent> 碳酸锂（广期所主力连续） 近 30 天走势：2026-09-14 ~ 2026-10-14，17 个交易日，区间涨跌 -23.757%（provenance=live）
+你> session_id : d8132c52-933c-4033-a104-126f7c4f7428
+user_id    : 00ee1d14-1ca6-42ec-bb07-b186b77fc4cf
+tasks      : 1
+  - task_id=ea298059-b12a-4949-9c25-2b377700bcee intent=trend_query status=completed suspended=False missing=无
+      slots={"commodity": "lithium_carbonate", "days": 30, "query": "碳酸锂，最近30天走势"}
+你> 会话已保存：session_id=d8132c52-933c-4033-a104-126f7c4f7428（用 --session-id 恢复）

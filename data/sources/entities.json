@@ -1,0 +1,128 @@
+{
+  "registry_version": 1,
+  "notes": [
+    "A bare place name (Pilbara) is never treated as company evidence.",
+    "exclude_terms catch confusable entities that share the region name.",
+    "industry_terms + industry_context_terms decide whether a non-company item is relevant background."
+  ],
+  "entities": [
+    {
+      "key": "pilbara-minerals",
+      "name": "Pilbara Minerals Limited",
+      "aliases": [
+        "pilbara minerals limited",
+        "pilbara minerals ltd",
+        "pls group limited",
+        "pls group",
+        "pilbara minerals",
+        "asx:pls",
+        "asx: pls",
+        "pls.ax",
+        "(pls)"
+      ],
+      "tickers": [
+        "PLS",
+        "ASX:PLS"
+      ],
+      "projects": [
+        "pilgangoora",
+        "pilgangoora operation",
+        "pilgan",
+        "ngungaju",
+        "p1000"
+      ],
+      "match_keywords": [
+        "pilbara",
+        "pilgangoora",
+        "pls"
+      ],
+      "exclude_terms": [
+        "rio tinto",
+        "pilbara iron ore",
+        "iron ore",
+        "pilbara gold",
+        "asx:pgl",
+        "asx: pgl",
+        "terra gold",
+        "gold mineralisation",
+        "gold mineralization",
+        "copper",
+        "uranium"
+      ],
+      "industry_terms": [
+        "lithium",
+        "spodumene",
+        "lithium carbonate",
+        "lithium hydroxide",
+        "hard rock lithium",
+        "hard-rock lithium",
+        "brine",
+        "lithium-ion",
+        "battery-grade"
+      ],
+      "industry_context_terms": [
+        "price",
+        "supply",
+        "demand",
+        "offtake",
+        "production",
+        "project",
+        "resource",
+        "reserve",
+        "market",
+        "battery",
+        "ev",
+        "concentrate",
+        "mine",
+        "extraction",
+        "processing",
+        "shipment",
+        "M&A",
+        "acquisition",
+        "guidance",
+        "cost"
+      ],
+      "search_queries": [
+        "\"Pilbara Minerals\"",
+        "Pilgangoora lithium",
+        "ASX PLS lithium"
+      ],
+      "industry_query": "lithium market supply",
+      "official_domains": [
+        "pls.com",
+        "www.pls.com",
+        "pilbaraminerals.com.au",
+        "www.pilbaraminerals.com.au"
+      ]
+    }
+  ],
+  "official_domains": [
+    "asx.com.au",
+    "www.asx.com.au",
+    "announcements.asx.com.au",
+    "sedar.com",
+    "sedarplus.ca",
+    "sedarplus.com",
+    "asic.gov.au"
+  ],
+  "disclosure_markers": [
+    "asx announcement",
+    "appendix 4c",
+    "appendix 4e",
+    "appendix 5b",
+    "quarterly activities report",
+    "quarterly activities and cash flow report",
+    "annual report",
+    "half year report",
+    "full year results",
+    "market release",
+    "investor presentation",
+    "notice of general meeting",
+    "results of operations",
+    "mineral resource",
+    "ore reserve",
+    "jorc",
+    "ni 43-101",
+    "technical report"
+  ]
+}

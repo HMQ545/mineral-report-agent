@@ -1,0 +1,23 @@
+{
+  "source": "repository fixture (offline sample)",
+  "source_url": "fixture://prices/lithium_spodumene",
+  "disclaimer": "锂辉石精矿 SC6.0 CIF 没有公开免费真实数据源。本文件是人工编写的离线样例，只在演示模式使用；live 验收模式下该商品必须报告为 DATA_MISSING。",
+  "as_of": "2026-10-10",
+  "quote": {
+    "commodity": "lithium_spodumene",
+    "price": 1180.0,
+    "prev_close": 1165.0,
+    "currency": "USD",
+    "unit": "USD/t",
+    "quote_type": "contract price",
+    "contract_spec": "spodumene concentrate SC6.0, CIF China"
+  },
+  "trend": [
+    {"date": "2026-09-12", "close": 1095.0},
+    {"date": "2026-09-19", "close": 1120.0},
+    {"date": "2026-09-26", "close": 1140.0},
+    {"date": "2026-10-03", "close": 1165.0},
+    {"date": "2026-10-10", "close": 1180.0}
+  ]
+}
+

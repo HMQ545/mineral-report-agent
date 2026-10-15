@@ -1,0 +1,379 @@
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [lme-price-mcp internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.04kB 0.0s done
+#1 DONE 0.0s
+
+#2 [mineral-pdf-mcp internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.04kB done
+#2 DONE 0.0s
+
+#3 [mining-news-mcp internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.04kB done
+#3 DONE 0.0s
+
+#4 [mining-news-mcp internal] load metadata for docker.io/library/python:3.12-slim
+#4 DONE 0.0s
+
+#5 [lme-price-mcp internal] load .dockerignore
+#5 transferring context: 134B done
+#5 DONE 0.0s
+
+#6 [mineral-pdf-mcp internal] load .dockerignore
+#6 transferring context: 134B done
+#6 DONE 0.0s
+
+#7 [mining-news-mcp internal] load .dockerignore
+#7 transferring context: 134B done
+#7 DONE 0.0s
+
+#8 [mining-news-mcp 1/9] FROM docker.io/library/python:3.12-slim
+#8 DONE 0.0s
+
+#9 [mining-news-mcp internal] load build context
+#9 ...
+
+#10 [lme-price-mcp internal] load build context
+#10 transferring context: 3.55MB 0.3s done
+#10 DONE 0.3s
+
+#9 [mining-news-mcp internal] load build context
+#9 transferring context: 3.55MB 0.3s done
+#9 DONE 0.3s
+
+#11 [mineral-pdf-mcp internal] load build context
+#11 transferring context: 3.55MB 0.3s done
+#11 DONE 0.3s
+
+#12 [mining-news-mcp 2/9] RUN pip install --no-cache-dir uv==0.11.25
+#12 CACHED
+
+#13 [mining-news-mcp 3/9] WORKDIR /app
+#13 CACHED
+
+#14 [mining-news-mcp 4/9] COPY pyproject.toml uv.lock README.md ./
+#14 CACHED
+
+#15 [mineral-pdf-mcp 5/9] COPY src ./src
+#15 DONE 0.1s
+
+#16 [mining-news-mcp 6/9] COPY data ./data
+#16 DONE 0.1s
+
+#17 [mining-news-mcp 7/9] COPY scripts ./scripts
+#17 DONE 0.1s
+
+#18 [mineral-pdf-mcp 8/9] RUN uv sync --frozen --no-dev
+#18 0.844 Using CPython 3.12.15 interpreter at: /usr/local/bin/python3
+#18 0.845 Creating virtual environment at: .venv
+#18 0.921    Building minereport @ file:///app
+#18 1.581 Downloading cryptography (4.5MiB)
+#18 1.588 Downloading pillow (6.6MiB)
+#18 1.590 Downloading zstandard (5.3MiB)
+#18 1.592 Downloading tiktoken (1.1MiB)
+#18 1.595 Downloading pdfminer-six (6.3MiB)
+#18 1.605 Downloading pydantic-core (1.9MiB)
+#18 1.607 Downloading pypdfium2 (3.6MiB)
+#18 1.610 Downloading lxml (4.8MiB)
+#18 4.434  Downloaded tiktoken
+#18 5.339  Downloaded pydantic-core
+#18 6.528  Downloaded pypdfium2
+#18 7.059  Downloaded cryptography
+#18 7.285       Built minereport @ file:///app
+#18 7.419  Downloaded lxml
+#18 7.448  Downloaded zstandard
+#18 7.668  Downloaded pillow
+#18 7.672  Downloaded pdfminer-six
+#18 7.673 Prepared 73 packages in 6.78s
+#18 7.783 Installed 73 packages in 109ms
+#18 7.783  + aiosqlite==0.22.1
+#18 7.783  + annotated-types==0.8.0
+#18 7.783  + anyio==4.9.0
+#18 7.783  + attrs==26.1.0
+#18 7.784  + certifi==2026.7.22
+#18 7.784  + cffi==2.1.1
+#18 7.784  + charset-normalizer==3.5.2
+#18 7.784  + click==8.5.0
+#18 7.784  + cryptography==50.0.2
+#18 7.784  + distro==1.9.0
+#18 7.784  + h11==0.16.0
+#18 7.784  + httpcore==1.0.9
+#18 7.784  + httpcore2==2.6.0
+#18 7.784  + httpx==0.28.1
+#18 7.784  + httpx-sse==0.4.3
+#18 7.784  + httpx2==2.6.0
+#18 7.784  + idna==3.20
+#18 7.784  + jinja2==3.1.6
+#18 7.784  + jiter==0.17.0
+#18 7.785  + jsonpatch==1.35
+#18 7.785  + jsonpointer==3.2.1
+#18 7.785  + jsonschema==4.26.0
+#18 7.785  + jsonschema-specifications==2025.9.1
+#18 7.785  + langchain-core==0.3.72
+#18 7.785  + langchain-deepseek==0.1.4
+#18 7.785  + langchain-mcp-adapters==0.1.11
+#18 7.785  + langchain-openai==0.3.28
+#18 7.785  + langgraph==0.6.11
+#18 7.785  + langgraph-checkpoint==3.0.1
+#18 7.785  + langgraph-checkpoint-sqlite==3.0.3
+#18 7.785  + langgraph-prebuilt==0.6.5
+#18 7.785  + langgraph-sdk==0.2.15
+#18 7.785  + langsmith==0.14.8
+#18 7.785  + lxml==5.3.1
+#18 7.785  + markupsafe==3.0.4
+#18 7.785  + mcp==1.18.0
+#18 7.785  + minereport==0.1.0 (from file:///app)
+#18 7.786  + openai==1.109.1
+#18 7.786  + orjson==3.13.0
+#18 7.786  + ormsgpack==1.12.2
+#18 7.786  + packaging==26.3
+#18 7.786  + pdfminer-six==20260107
+#18 7.786  + pdfplumber==0.11.10
+#18 7.786  + pillow==12.3.0
+#18 7.786  + pycparser==3.11
+#18 7.786  + pydantic==2.11.7
+#18 7.786  + pydantic-core==2.33.2
+#18 7.786  + pydantic-settings==2.15.0
+#18 7.786  + pypdfium2==5.14.0
+#18 7.786  + python-dotenv==1.0.1
+#18 7.786  + python-multipart==0.0.32
+#18 7.786  + pyyaml==6.0.3
+#18 7.786  + referencing==0.37.0
+#18 7.786  + regex==2026.9.29
+#18 7.787  + requests==2.34.2
+#18 7.787  + requests-toolbelt==1.0.0
+#18 7.787  + rpds-py==2026.9.1
+#18 7.787  + sniffio==1.3.1
+#18 7.787  + sqlite-vec==0.1.9
+#18 7.787  + sse-starlette==3.5.0
+#18 7.787  + starlette==1.8.0
+#18 7.787  + tenacity==8.5.0
+#18 7.787  + tiktoken==0.14.0
+#18 7.787  + tqdm==4.70.1
+#18 7.787  + truststore==0.10.5
+#18 7.787  + typing-extensions==4.16.0
+#18 7.787  + typing-inspection==0.4.4
+#18 7.787  + urllib3==2.8.0
+#18 7.787  + uuid-utils==0.17.1
+#18 7.787  + uvicorn==0.54.0
+#18 7.787  + websockets==17.2
+#18 7.787  + xxhash==4.0.1
+#18 7.787  + zstandard==0.25.0
+#18 DONE 8.0s
+
+#19 [mineral-pdf-mcp 9/9] RUN useradd --create-home --shell /bin/bash appuser  && mkdir -p /app/reports  && chown -R appuser:appuser /app
+#19 DONE 8.3s
+
+#20 [lme-price-mcp] exporting to image
+#20 exporting layers
+#20 exporting layers 1.1s done
+#20 writing image sha256:4f24d3c5a1704bcb0d4387a45caa9a3c5fc0623c6832082c4d7f4a834ae95e31 done
+#20 naming to docker.io/library/minereport:local 0.0s done
+#20 DONE 1.2s
+
+#21 [mining-news-mcp] exporting to image
+#21 exporting layers 1.1s done
+#21 writing image sha256:f369b4a89cc636425056b6321865cf605c5517d078976f24ee032fe744a958bd done
+#21 naming to docker.io/library/minereport:local done
+#21 DONE 1.2s
+
+#22 [mineral-pdf-mcp] exporting to image
+#22 exporting layers 1.1s done
+#22 writing image sha256:e4431e52cd5b829991d07a59a79773c9c68b8f6cc66b82e848118383b144896f done
+#22 naming to docker.io/library/minereport:local done
+#22 DONE 1.2s
+
+#23 [lme-price-mcp] resolving provenance for metadata file
+#23 DONE 0.0s
+
+#24 [mineral-pdf-mcp] resolving provenance for metadata file
+#24 DONE 0.0s
+
+#25 [mining-news-mcp] resolving provenance for metadata file
+#25 DONE 0.0s
+
+#26 [agent internal] load build definition from Dockerfile
+#26 transferring dockerfile: 1.04kB done
+#26 DONE 0.0s
+
+#4 [agent internal] load metadata for docker.io/library/python:3.12-slim
+#4 DONE 0.0s
+
+#27 [agent internal] load .dockerignore
+#27 transferring context: 134B done
+#27 DONE 0.0s
+
+#8 [agent 1/9] FROM docker.io/library/python:3.12-slim
+#8 DONE 0.0s
+
+#28 [agent internal] load build context
+#28 transferring context: 10.09kB 0.0s done
+#28 DONE 0.0s
+
+#29 [agent 5/9] COPY src ./src
+#29 CACHED
+
+#30 [agent 7/9] COPY scripts ./scripts
+#30 CACHED
+
+#13 [agent 3/9] WORKDIR /app
+#13 CACHED
+
+#31 [agent 8/9] RUN uv sync --frozen --no-dev
+#31 CACHED
+
+#12 [agent 2/9] RUN pip install --no-cache-dir uv==0.11.25
+#12 CACHED
+
+#32 [agent 4/9] COPY pyproject.toml uv.lock README.md ./
+#32 CACHED
+
+#33 [agent 6/9] COPY data ./data
+#33 CACHED
+
+#34 [agent 9/9] RUN useradd --create-home --shell /bin/bash appuser  && mkdir -p /app/reports  && chown -R appuser:appuser /app
+#34 CACHED
+
+#35 [agent] exporting to image
+#35 exporting layers done
+#35 writing image sha256:e1f3b52749e5e03af2b1c61dc571c3ec0a942a08102edff2cd955c4af4bd0ce6 done
+#35 naming to docker.io/library/minereport:local done
+#35 DONE 0.0s
+
+#36 [agent] resolving provenance for metadata file
+#36 DONE 0.0s
+Attaching to agent-1, lme-price-mcp-1, mineral-pdf-mcp-1, mining-news-mcp-1
+mineral-pdf-mcp-1  | INFO:     127.0.0.1:48004 - "GET /healthz HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     127.0.0.1:52270 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     127.0.0.1:46700 - "GET /healthz HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58190 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:44842 - "POST /mcp HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:54316 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58196 - "POST /mcp HTTP/1.1" 202 Accepted
+lme-price-mcp-1    | INFO:     172.18.0.5:58198 - "GET /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:44850 - "POST /mcp HTTP/1.1" 202 Accepted
+mining-news-mcp-1  | INFO:     172.18.0.5:44858 - "GET /mcp HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:54318 - "POST /mcp HTTP/1.1" 202 Accepted
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:54332 - "GET /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58210 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:44872 - "POST /mcp HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:54334 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:44884 - "DELETE /mcp HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:54346 - "DELETE /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58218 - "DELETE /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58226 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:44898 - "POST /mcp HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:54348 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:44908 - "POST /mcp HTTP/1.1" 202 Accepted
+mining-news-mcp-1  | INFO:     172.18.0.5:44912 - "GET /mcp HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:54360 - "POST /mcp HTTP/1.1" 202 Accepted
+lme-price-mcp-1    | INFO:     172.18.0.5:58248 - "GET /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58238 - "POST /mcp HTTP/1.1" 202 Accepted
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:54362 - "GET /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:44922 - "POST /mcp HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:54374 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58264 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58272 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58286 - "DELETE /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58300 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58316 - "GET /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58324 - "POST /mcp HTTP/1.1" 202 Accepted
+lme-price-mcp-1    | INFO:     172.18.0.5:58340 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     127.0.0.1:33112 - "GET /healthz HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58356 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58370 - "DELETE /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58382 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58384 - "POST /mcp HTTP/1.1" 202 Accepted
+lme-price-mcp-1    | INFO:     172.18.0.5:58398 - "GET /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58414 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58424 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     172.18.0.5:58436 - "DELETE /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     127.0.0.1:48278 - "GET /healthz HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     127.0.0.1:55028 - "GET /healthz HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:33322 - "POST /mcp HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     172.18.0.5:33334 - "DELETE /mcp HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     127.0.0.1:33184 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     127.0.0.1:48012 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     127.0.0.1:48400 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38578 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38580 - "DELETE /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38590 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38592 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38604 - "POST /mcp HTTP/1.1" 202 Accepted
+mining-news-mcp-1  | INFO:     172.18.0.5:38608 - "GET /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38614 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38630 - "POST /mcp HTTP/1.1" 202 Accepted
+mining-news-mcp-1  | INFO:     172.18.0.5:38640 - "GET /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38654 - "POST /mcp HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     127.0.0.1:48284 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38670 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38676 - "POST /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38678 - "DELETE /mcp HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     172.18.0.5:38686 - "DELETE /mcp HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     127.0.0.1:33196 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     127.0.0.1:48404 - "GET /healthz HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     127.0.0.1:37200 - "GET /healthz HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     127.0.0.1:50502 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     127.0.0.1:37768 - "GET /healthz HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     127.0.0.1:37214 - "GET /healthz HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     127.0.0.1:50504 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     127.0.0.1:60236 - "GET /healthz HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     127.0.0.1:45052 - "GET /healthz HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     127.0.0.1:56482 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     127.0.0.1:60240 - "GET /healthz HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     127.0.0.1:45054 - "GET /healthz HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     127.0.0.1:56490 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     127.0.0.1:58384 - "GET /healthz HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     127.0.0.1:48054 - "GET /healthz HTTP/1.1" 200 OK
+mineral-pdf-mcp-1  | INFO:     127.0.0.1:56562 - "GET /healthz HTTP/1.1" 200 OK
+mining-news-mcp-1  | INFO:     127.0.0.1:58398 - "GET /healthz HTTP/1.1" 200 OK
+lme-price-mcp-1    | INFO:     127.0.0.1:48070 - "GET /healthz HTTP/1.1" 200 OK
+agent-1            | {
+agent-1            |   "query": "给我生成一份关于 Pilbara 锂矿的今日简报",
+agent-1            |   "topic": "Pilgangoora Operation（Pilbara Minerals Limited）",
+agent-1            |   "commodity": "lithium_carbonate",
+agent-1            |   "llm_mode": "deepseek",
+agent-1            |   "report_path": "/app/reports/2026-10-15-pilbara-lithium-brief.md",
+agent-1            |   "provenance": {
+agent-1            |     "news": {
+agent-1            |       "provenance": "live",
+agent-1            |       "source": "public-rss:google-news-rss+direct-feeds",
+agent-1            |       "source_url": "https://news.google.com/rss/search",
+agent-1            |       "as_of": "2026-10-15T04:49:00+00:00",
+agent-1            |       "data_status": "OK",
+agent-1            |       "error": null
+agent-1            |     },
+agent-1            |     "reserves": {
+agent-1            |       "provenance": "live",
+agent-1            |       "source": "live download",
+agent-1            |       "source_url": "https://minedocs.com/25/Pilbara-Minerals-MR-08242023.pdf",
+agent-1            |       "as_of": "2023-06-30",
+agent-1            |       "data_status": "OK",
+agent-1            |       "error": null
+agent-1            |     },
+agent-1            |     "price": {
+agent-1            |       "provenance": "live",
+agent-1            |       "source": "sina:hq.sinajs.cn",
+agent-1            |       "source_url": "https://hq.sinajs.cn/list=nf_LC0",
+agent-1            |       "as_of": "2026-10-15",
+agent-1            |       "data_status": "OK",
+agent-1            |       "error": null
+agent-1            |     },
+agent-1            |     "trend": {
+agent-1            |       "provenance": "live",
+agent-1            |       "source": "sina:hq.sinajs.cn",
+agent-1            |       "source_url": "https://hq.sinajs.cn/list=nf_LC0",
+agent-1            |       "as_of": "2026-10-15",
+agent-1            |       "data_status": "OK",
+agent-1            |       "error": null
+agent-1            |     }
+agent-1            |   },
+agent-1            |   "live_gate_failures": [],
+agent-1            |   "errors": [
+agent-1            |     "真实模型模式：deepseek-flash（thinking 已关闭，JSON 输出 + Pydantic 校验）。",
+agent-1            |     "剔除价格口径混用的风险结论：risk_spodumene_price_missing_001（碳酸锂参考价 ≠ 锂辉石销售价）"
+agent-1            |   ]
+agent-1            | }
+[Kagent-1 exited with code 0

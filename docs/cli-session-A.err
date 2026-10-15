@@ -1,0 +1,6 @@
+[模型] 自动模式：使用真实模型 deepseek-flash（thinking 已关闭）。
+Processing request of type ListToolsRequest
+Processing request of type ListToolsRequest
+Processing request of type ListToolsRequest
+      [intent=price_query action=new_task task=79a05444 status=waiting_for_slots missing=['commodity', 'date']]
+      [intent=price_query action=slot_completion task=79a05444 status=waiting_for_slots missing=['date']]

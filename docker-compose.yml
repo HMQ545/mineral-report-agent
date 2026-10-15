@@ -1,0 +1,157 @@
+name: minereport
+
+# Build args are read from the shell so the documented Gate 3 command
+# (`docker compose up --build ...`) works unchanged on a directly-connected
+# machine (all empty) and behind a proxy (export HTTP_PROXY/HTTPS_PROXY first).
+x-build: &build
+  context: .
+  args:
+    HTTP_PROXY: ${HTTP_PROXY:-}
+    HTTPS_PROXY: ${HTTPS_PROXY:-}
+    NO_PROXY: ${NO_PROXY:-}
+
+x-mcp-server: &mcp-server
+  build: *build
+  image: minereport:local
+  restart: unless-stopped
+  env_file:
+    - path: .env
+      required: false
+    - path: docker.env
+      required: false
+  # Lets containers reach a proxy running on the Windows host loopback.
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+
+x-healthcheck: &healthcheck
+  interval: 5s
+  timeout: 5s
+  retries: 12
+  start_period: 15s
+
+services:
+  mining-news-mcp:
+    <<: *mcp-server
+    command:
+      - minereport-news
+      - --transport
+      - streamable-http
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8101"
+    healthcheck:
+      <<: *healthcheck
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request,sys;sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8101/healthz',timeout=3).status==200 else 1)"
+
+  mineral-pdf-mcp:
+    <<: *mcp-server
+    command:
+      - minereport-pdf
+      - --transport
+      - streamable-http
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8102"
+    healthcheck:
+      <<: *healthcheck
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request,sys;sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8102/healthz',timeout=3).status==200 else 1)"
+
+  lme-price-mcp:
+    <<: *mcp-server
+    command:
+      - minereport-price
+      - --transport
+      - streamable-http
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8103"
+    healthcheck:
+      <<: *healthcheck
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request,sys;sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8103/healthz',timeout=3).status==200 else 1)"
+
+  agent:
+    image: minereport:local
+    build: *build
+    # The agent is a one-shot job: it must never restart and re-spend API budget.
+    restart: "no"
+    env_file:
+      - path: .env
+        required: false
+      - path: docker.env
+        required: false
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      MINEREPORT_NEWS_URL: http://mining-news-mcp:8101/mcp
+      MINEREPORT_PDF_URL: http://mineral-pdf-mcp:8102/mcp
+      MINEREPORT_PRICE_URL: http://lme-price-mcp:8103/mcp
+    depends_on:
+      mining-news-mcp:
+        condition: service_healthy
+      mineral-pdf-mcp:
+        condition: service_healthy
+      lme-price-mcp:
+        condition: service_healthy
+    volumes:
+      - ./reports:/app/reports
+    command:
+      - minereport-agent
+      - --require-live
+      - --json
+      - --quiet
+      - 给我生成一份关于 Pilbara 锂矿的今日简报
+
+  # Multi-turn chat (opt-in profile). The default single-shot `agent` service and
+  # the Gate 3 command are unchanged.
+  agent-chat:
+    image: minereport:local
+    build: *build
+    profiles: ["chat"]
+    # Interactive conversation: needs a TTY and an open stdin.
+    stdin_open: true
+    tty: true
+    restart: "no"
+    env_file:
+      - path: .env
+        required: false
+      - path: docker.env
+        required: false
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      MINEREPORT_NEWS_URL: http://mining-news-mcp:8101/mcp
+      MINEREPORT_PDF_URL: http://mineral-pdf-mcp:8102/mcp
+      MINEREPORT_PRICE_URL: http://lme-price-mcp:8103/mcp
+      # SESSION_ID=... docker compose --profile chat run --rm agent-chat
+      MINEREPORT_SESSION_ID: ${SESSION_ID:-}
+      MINEREPORT_USER_ID: ${USER_ID:-}
+    depends_on:
+      mining-news-mcp:
+        condition: service_healthy
+      mineral-pdf-mcp:
+        condition: service_healthy
+      lme-price-mcp:
+        condition: service_healthy
+    volumes:
+      - ./reports:/app/reports
+      - ./data/sessions:/app/data/sessions
+    command:
+      - minereport-agent
+      - --chat
+      - --persist
+      - sqlite

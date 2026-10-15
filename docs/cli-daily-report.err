@@ -1,0 +1,35 @@
+Processing request of type ListToolsRequest
+Processing request of type ListToolsRequest
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+Processing request of type CallToolRequest
+Processing request of type CallToolRequest
+HTTP Request: GET https://minedocs.com/25/Pilbara-Minerals-MR-08242023.pdf "HTTP/1.1 200 OK"
+Processing request of type ListToolsRequest
+HTTP Request: GET https://hq.sinajs.cn/list=nf_LC0 "HTTP/1.1 200 OK"
+HTTP Request: GET https://news.google.com/rss/search?q=%22Pilbara+Minerals%22+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen "HTTP/1.1 200 OK"
+HTTP Request: GET https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20_LC0=/InnerFuturesNewService.getDailyKLine?symbol=LC0 "HTTP/1.1 200 OK"
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+HTTP Request: GET https://www.mining.com/feed/ "HTTP/1.1 200 OK"
+HTTP Request: GET https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20_LC0=/InnerFuturesNewService.getDailyKLine?symbol=LC0 "HTTP/1.1 200 OK"
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+Processing request of type ListToolsRequest
+HTTP Request: GET https://www.australianmining.com.au/feed/ "HTTP/1.1 200 OK"
+HTTP Request: GET https://news.google.com/rss/search?q=Pilgangoora+lithium+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen "HTTP/1.1 200 OK"
+HTTP Request: GET https://www.mining.com/feed/ "HTTP/1.1 200 OK"
+HTTP Request: GET https://www.australianmining.com.au/feed/ "HTTP/1.1 200 OK"
+HTTP Request: GET https://news.google.com/rss/search?q=ASX+PLS+lithium+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen "HTTP/1.1 200 OK"
+HTTP Request: GET https://www.mining.com/feed/ "HTTP/1.1 200 OK"
+HTTP Request: GET https://www.australianmining.com.au/feed/ "HTTP/1.1 200 OK"
+HTTP Request: GET https://news.google.com/rss/search?q=lithium+market+supply+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen "HTTP/1.1 200 OK"
+HTTP Request: GET https://www.mining.com/feed/ "HTTP/1.1 200 OK"
+HTTP Request: GET https://www.australianmining.com.au/feed/ "HTTP/1.1 200 OK"
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+HTTP Request: GET https://www.mining.com/energyx-inks-10-year-2b-lithium-offtake-deal-with-trafigura/ "HTTP/1.1 200 OK"
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+HTTP Request: GET https://www.mining.com/lithium-triangles-vast-resources-face-unsolved-extraction-hurdles/ "HTTP/1.1 200 OK"
+Processing request of type ListToolsRequest

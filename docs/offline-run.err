@@ -1,0 +1,4 @@
+Processing request of type ListToolsRequest
+Processing request of type ListToolsRequest
+Processing request of type ListToolsRequest
+[存储] 已从旧库 agent_state.sqlite 迁移会话/任务数据到 shared.sqlite（旧库保留不动）

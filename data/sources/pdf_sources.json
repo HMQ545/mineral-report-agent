@@ -1,0 +1,112 @@
+{
+  "registry_version": 1,
+  "notes": [
+    "Only public URLs that were actually reachable from the build machine are registered.",
+    "sha256 is filled in by scripts/verify_sources.py --update and enforced afterwards.",
+    "role=primary-deliverable is the only source used as the headline resource data for the Pilbara brief.",
+    "role=standard-compatibility exists purely to prove NI 43-101 parsing works.",
+    "role=parser-corpus is used for parser regression tests only and must never be reported as Pilbara data."
+  ],
+  "sources": [
+    {
+      "key": "pilbara-2023-mineral-resource",
+      "url": "https://minedocs.com/25/Pilbara-Minerals-MR-08242023.pdf",
+      "role": "primary-deliverable",
+      "standard": "JORC",
+      "reporter_entity": "Pilbara Minerals Limited",
+      "project_name": "Pilgangoora Operation",
+      "commodity": "Li2O",
+      "report_date": "2023-06-30",
+      "document_date": "2023-08-24",
+      "exchange_ticker": "ASX: PLS",
+      "keywords": [
+        "pilbara",
+        "pilgangoora",
+        "pls"
+      ],
+      "expect_keywords": [
+        "Pilbara Minerals",
+        "Pilgangoora"
+      ],
+      "expect_categories": [
+        "Measured",
+        "Indicated",
+        "Inferred",
+        "Proved",
+        "Probable"
+      ],
+      "hosting_note": "Pilbara Minerals 官方域名（pls.com / pilbaraminerals.com.au）在本机网络返回 403，ASX 公告主机 TLS 被重置；本文件为 minedocs.com 托管的同日披露原文镜像，内容归属仍为 Pilbara Minerals Limited。",
+      "sha256": "db8b9740f60deab7224c80022f34c74bdc0a12485bfb8f49b41cf9e1685b038c",
+      "bytes": 4006500,
+      "verified_at": "2026-10-14",
+      "effective_date": "2023-06-30",
+      "announced_date": "2023-08-24",
+      "fetched_at": "2026-10-14"
+    },
+    {
+      "key": "ni43101-lithium-ionic",
+      "url": "https://lithiumionic.com/_resources/reports/NI-43-101-Technical-Report.pdf",
+      "role": "standard-compatibility",
+      "standard": "NI 43-101",
+      "reporter_entity": "Lithium Ionic Corp.",
+      "project_name": "Outro Lado / Bandeira",
+      "commodity": "Li2O",
+      "report_date": null,
+      "document_date": null,
+      "exchange_ticker": "TSXV: LTH",
+      "keywords": [
+        "lithium ionic",
+        "outro lado",
+        "bandeira"
+      ],
+      "expect_keywords": [
+        "Lithium Ionic"
+      ],
+      "expect_categories": [
+        "Measured",
+        "Indicated",
+        "Inferred"
+      ],
+      "hosting_note": "公司官网直链的 NI 43-101 技术报告，仅用于验证解析器对 NI 43-101 文本的兼容性，不得作为任何项目的资源量来源。",
+      "sha256": "646dec1576db5d63e69df9b7e489de4245bf4a617ba5eeaf74e279874e443f59",
+      "bytes": 4884816,
+      "verified_at": "2026-10-14",
+      "effective_date": null,
+      "announced_date": null,
+      "fetched_at": "2026-10-14"
+    },
+    {
+      "key": "liontown-kathleen-valley-jorc",
+      "url": "https://www.liontown.com/wp-content/uploads/2026/09/61346497.pdf",
+      "role": "parser-corpus",
+      "standard": "JORC",
+      "reporter_entity": "Liontown Resources Limited",
+      "project_name": "Kathleen Valley",
+      "commodity": "Li2O",
+      "report_date": null,
+      "document_date": "2026-09-30",
+      "exchange_ticker": "ASX: LTR",
+      "keywords": [
+        "liontown",
+        "kathleen valley"
+      ],
+      "expect_keywords": [
+        "Kathleen Valley"
+      ],
+      "expect_categories": [
+        "Indicated",
+        "Inferred",
+        "Measured",
+        "Probable",
+        "Proved"
+      ],
+      "hosting_note": "Liontown Resources (ASX: LTR) 的 Kathleen Valley 资源量报告；仅作为解析器回归语料，不得计入任何 Pilbara 项目的资源量。",
+      "sha256": "8aec237a34051c7f0362237655bf17528cc793605fc243b6e93721c863c02680",
+      "bytes": 323635,
+      "verified_at": "2026-10-14",
+      "effective_date": null,
+      "announced_date": "2026-09-30",
+      "fetched_at": "2026-10-14"
+    }
+  ]
+}

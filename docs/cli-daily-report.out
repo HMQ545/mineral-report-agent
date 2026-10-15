@@ -1,0 +1,41 @@
+{
+  "query": "给我生成一份关于 Pilbara 锂矿的今日简报",
+  "topic": "Pilgangoora Operation（Pilbara Minerals Limited）",
+  "commodity": "lithium_carbonate",
+  "llm_mode": "deepseek",
+  "report_path": "D:\\Python\\mineral-report-agent\\reports\\2026-10-15-pilbara-lithium-brief.md",
+  "provenance": {
+    "news": {
+      "provenance": "live",
+      "source": "public-rss:google-news-rss+direct-feeds",
+      "source_url": "https://news.google.com/rss/search",
+      "as_of": "2026-10-13T23:15:02+00:00",
+      "error": null
+    },
+    "reserves": {
+      "provenance": "live",
+      "source": "live download",
+      "source_url": "https://minedocs.com/25/Pilbara-Minerals-MR-08242023.pdf",
+      "as_of": "2023-06-30",
+      "error": null
+    },
+    "price": {
+      "provenance": "live",
+      "source": "sina:hq.sinajs.cn",
+      "source_url": "https://hq.sinajs.cn/list=nf_LC0",
+      "as_of": "2026-10-15",
+      "error": null
+    },
+    "trend": {
+      "provenance": "live",
+      "source": "sina:hq.sinajs.cn",
+      "source_url": "https://hq.sinajs.cn/list=nf_LC0",
+      "as_of": "2026-10-14",
+      "error": null
+    }
+  },
+  "live_gate_failures": [],
+  "errors": [
+    "真实模型模式：deepseek-flash（thinking 已关闭，JSON 输出 + Pydantic 校验）。"
+  ]
+}

@@ -1,0 +1,5 @@
+ Container minereport-mining-news-mcp-1  Running
+ Container minereport-mineral-pdf-mcp-1  Running
+ Container minereport-lme-price-mcp-1  Running
+[模型] 自动模式：使用真实模型 deepseek-flash（thinking 已关闭）。
+      [intent=price_query action=new_task task=76e917d4 status=waiting_for_slots missing=['commodity', 'date']]

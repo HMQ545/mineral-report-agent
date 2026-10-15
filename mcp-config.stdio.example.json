@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "mining-news-mcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "<PROJECT_PATH>",
+        "--no-sync",
+        "minereport-news",
+        "--transport",
+        "stdio"
+      ]
+    },
+    "mineral-pdf-mcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "<PROJECT_PATH>",
+        "--no-sync",
+        "minereport-pdf",
+        "--transport",
+        "stdio"
+      ]
+    },
+    "lme-price-mcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "<PROJECT_PATH>",
+        "--no-sync",
+        "minereport-price",
+        "--transport",
+        "stdio"
+      ]
+    }
+  }
+}

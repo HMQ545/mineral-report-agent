@@ -1,0 +1,47 @@
+{
+  "registry_version": 1,
+  "notes": [
+    "真实行业媒体的文章直链，供 Live 正文抓取测试使用；不依赖最近 7 天 RSS 是否恰好收录该文章。",
+    "每次使用都会以 refresh=true 重新发起 HTTP 请求，命中缓存不算通过。",
+    "word_count/chars 是在 2026-10-15 通过真实 MCP 会话 fetch_article(refresh=true) 实测所得。",
+    "若某条链接失效（404/403/超时），测试会记录并尝试下一条；全部不可达时按外部依赖不可用记录为 skip。"
+  ],
+  "samples": [
+    {
+      "url": "https://www.mining.com/energyx-inks-10-year-2b-lithium-offtake-deal-with-trafigura/",
+      "publisher": "mining.com",
+      "topic": "lithium offtake",
+      "verified_at": "2026-10-15",
+      "observed_http_status": 200,
+      "observed_word_count": 532,
+      "observed_chars": 3508
+    },
+    {
+      "url": "https://www.mining.com/lithium-triangles-vast-resources-face-unsolved-extraction-hurdles/",
+      "publisher": "mining.com",
+      "topic": "lithium resources",
+      "verified_at": "2026-10-15",
+      "observed_http_status": 200,
+      "observed_word_count": 656,
+      "observed_chars": 4691
+    },
+    {
+      "url": "https://www.australianmining.com.au/glencore-begins-trading-asx/",
+      "publisher": "australianmining.com.au",
+      "topic": "ASX listing",
+      "verified_at": "2026-10-15",
+      "observed_http_status": 200,
+      "observed_word_count": 340,
+      "observed_chars": 2390
+    },
+    {
+      "url": "https://www.australianmining.com.au/bulk-handling-technologies-tackles-lime-processing-from-end-to-end/",
+      "publisher": "australianmining.com.au",
+      "topic": "processing equipment",
+      "verified_at": "2026-10-15",
+      "observed_http_status": 200,
+      "observed_word_count": 736,
+      "observed_chars": 5134
+    }
+  ]
+}

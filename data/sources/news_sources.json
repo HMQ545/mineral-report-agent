@@ -1,0 +1,29 @@
+{
+  "registry_version": 1,
+  "engines": [
+    {
+      "name": "google-news-rss",
+      "url": "https://news.google.com/rss/search",
+      "params": {"hl": "en-US", "gl": "US", "ceid": "US:en"},
+      "recency_operator": "when:{days}d",
+      "role": "primary",
+      "verified": "2026-10-14: 200 OK, returns items within the requested window"
+    },
+    {
+      "name": "bing-news-rss",
+      "url": "https://www.bing.com/news/search",
+      "params": {"format": "RSS"},
+      "recency_operator": null,
+      "role": "secondary",
+      "verified": "2026-10-14: 200 OK but results were typically older than 30 days"
+    }
+  ],
+  "excluded": [
+    {
+      "name": "gdelt-doc-api",
+      "url": "https://api.gdeltproject.org/api/v2/doc/doc",
+      "reason": "returned HTTP 429 on every attempt from the build machine; not used"
+    }
+  ]
+}
+

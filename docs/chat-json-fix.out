@@ -1,0 +1,52 @@
+[会话] user_id=00ee1d14-1ca6-42ec-bb07-b186b77fc4cf session_id=35bc2d2d-2b10-45e2-a3d6-3f2e56371525 persist=sqlite
+命令：
+  /state   查看当前会话的意图、槽位与任务状态
+  /tasks   列出该会话的全部任务
+  /cancel  取消所有未完成任务
+  /exit    退出（会话与任务已持久化，可用同一 session_id 恢复）
+  /help    显示本帮助
+直接输入自然语言即可继续对话。
+你> Agent> 你好！有什么可以帮你的吗？
+你> Agent> Python 协程（coroutine）是一种可以暂停和恢复执行的函数，用来写异步代码。核心特点是：**能在等待 I/O 时让出控制权，去执行别的任务，而不是干等**。
+
+**基本用法**
+
+```python
+import asyncio
+
+async def fetch(name):
+    print(f"{name} 开始")
+    await asyncio.sleep(1)   # 模拟 I/O，期间让出控制权
+    print(f"{name} 结束")
+
+async def main():
+    await asyncio.gather(fetch("A"), fetch("B"))
+
+asyncio.run(main())
+```
+
+`async def` 定义协程函数，`await` 挂起当前协程等待结果。上面 A、B 会并发执行，总耗时约 1 秒而不是 2 秒。
+
+**关键点**
+
+- **协程 vs 线程**：协程是单线程内的并发，切换由代码显式控制（`await`），开销小、无锁竞争；线程由操作系统调度，切换开销大。
+- **适用场景**：I/O 密集型（网络请求、数据库、文件），不适合 CPU 密集型（那要用多进程）。
+- **`await` 只能用在 `async` 函数里**，普通函数不能直接 await。
+- **事件循环**：`asyncio.run()` 启动事件循环，负责调度所有协程。
+
+**和生成器的关系**
+
+早期协程用 `yield` 实现（生成器协程），现在 `async/await` 是官方语法。底层上，协程对象也是可暂停的执行体，`await` 类似 `yield from`。
+
+一句话：协程 = 能主动让出、可被事件循环调度的轻量级并发单元。
+你> Agent> LME 铜 3M（伦铜）：14348.0 USD/t（2026-10-15，provenance=live，参数 {"commodity": "copper", "date": "2026-10-15"}）
+你> Agent> 你想查碳酸锂还是锂辉石精矿？
+你> Agent> 还需要你补充：日期。请直接说明，我会继续这个任务。
+你> session_id : 35bc2d2d-2b10-45e2-a3d6-3f2e56371525
+user_id    : 00ee1d14-1ca6-42ec-bb07-b186b77fc4cf
+tasks      : 2
+  - task_id=fc6541ea-1e85-4207-8e67-dc0ccae90b3a intent=price_query status=waiting_for_slots suspended=True missing=date
+      slots={"commodity": "lithium_carbonate", "query": "碳酸锂"}
+  - task_id=6347df06-e80e-426c-ba96-c6954376219a intent=price_query status=completed suspended=False missing=无
+      slots={"commodity": "copper", "date": "2026-10-15", "query": "今天的铜价"}
+你> 会话已保存：session_id=35bc2d2d-2b10-45e2-a3d6-3f2e56371525（用 --session-id 恢复）
