@@ -28,7 +28,7 @@ uv sync
 Copy-Item .env.example .env          # 如需真实 LLM，把 DEEPSEEK_API_KEY 填进去
 uv run minereport-agent --require-live "给我生成一份关于 Pilbara 锂矿的今日简报"
 ```
-
+ uv run minereport-agent --chat       #进行多轮对话，可以自由切换任务，可以进行通用对话，可以使用会话id进行会话恢复
 预期结果：
 
 - 终端打印完整 Markdown 日报，并输出每个数据集的 provenance；
